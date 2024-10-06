@@ -1,6 +1,5 @@
-import { headerRef } from "../../js/globals.js";
-
 export function renderHeader() {
+  const headerRef = document.getElementById("header");
   headerRef.innerHTML = renderHeaderTemplate();
 }
 
