@@ -104,9 +104,10 @@ body {
 .content .header .themeToggle:hover {
   cursor: pointer;
 }
-.content .newItem .itemBox {
+.content .newItem .todoBox {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   height: 64px;
   width: 540px;
@@ -114,7 +115,12 @@ body {
   padding-block: 22px;
   background-color: var(--menu-background-color);
 }
-.content .newItem .itemBox .checkboxButton {
+.content .newItem .todoBox .todoHolder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.content .newItem .todoBox .todoHolder .checkboxButton {
   height: 24px;
   width: 24px;
   border: 2px solid transparent;
@@ -126,18 +132,18 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
-.content .newItem .itemBox .checkboxButton:hover {
+.content .newItem .todoBox .todoHolder .checkboxButton:hover {
   cursor: pointer;
   background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
 }
-.content .newItem .itemBox .inputFeld {
+.content .newItem .todoBox .todoHolder .inputFeld {
   background-color: transparent;
   outline: none;
   border: none;
   font-size: 18px;
   caret-color: #3a7cfd;
 }
-.content .newItem .itemBox .checkboxButtonChecked {
+.content .newItem .todoBox .todoHolder .checkboxButtonChecked {
   background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
   mask: unset;
   -webkit-mask: unset;
@@ -145,16 +151,17 @@ body {
   -webkit-mask-composite: unset;
   mask-composite: unset;
 }
-.content .newItem .itemBox .checkboxButtonChecked::after {
+.content .newItem .todoBox .todoHolder .checkboxButtonChecked::after {
   content: "✔";
   color: var(--main-color-font);
 }
 .content .itemList {
   margin-top: 24px;
 }
-.content .itemList .itemBox {
+.content .itemList .todoBox {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   height: 64px;
   width: 540px;
@@ -163,7 +170,12 @@ body {
   background-color: var(--menu-background-color);
   border-bottom: 1px solid var(--border-bottom);
 }
-.content .itemList .checkboxButton {
+.content .itemList .todoBox .todoHolder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.content .itemList .todoBox .todoHolder .checkboxButton {
   height: 24px;
   width: 24px;
   border: 2px solid transparent;
@@ -175,11 +187,11 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
-.content .itemList .checkboxButton:hover {
+.content .itemList .todoBox .todoHolder .checkboxButton:hover {
   cursor: pointer;
   background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
 }
-.content .itemList .checkboxButtonChecked {
+.content .itemList .todoBox .todoHolder .checkboxButtonChecked {
   background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
   mask: unset;
   -webkit-mask: unset;
@@ -187,16 +199,24 @@ body {
   -webkit-mask-composite: unset;
   mask-composite: unset;
 }
-.content .itemList .checkboxButtonChecked::after {
+.content .itemList .todoBox .todoHolder .checkboxButtonChecked::after {
   content: "✔";
   color: var(--main-color-font);
 }
-.content .itemList .todoTextArea {
+.content .itemList .todoBox .todoHolder .todoTextArea {
   color: var(--main-color-font);
 }
-.content .itemList .todoTextAreaChecked {
+.content .itemList .todoBox .todoHolder .todoTextAreaChecked {
   text-decoration: line-through;
   color: var(--secondary-color-font);
+}
+.content .itemList .todoBox .deleteButton {
+  height: 18px;
+  width: 18px;
+  color: var(--secondary-color-font);
+}
+.content .itemList .todoBox .deleteButton:hover {
+  cursor: pointer;
 }
 .content .menu {
   display: flex;

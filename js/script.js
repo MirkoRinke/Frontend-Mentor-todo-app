@@ -14,10 +14,13 @@ function getInput() {
   let itemId = idCounter++; // give the todo a unique id
   // data-id is used to identify the todo
   let itemBox = /*html*/ ` 
-    <div class="itemBox" data-id="${itemId}"> 
-        <button class="checkboxButton"></button>
-        <p class="todoTextArea">${inputValue}</p>   
-    </div> 
+    <div class="todoBox" data-id="${itemId}"> 
+        <div class="todoHolder">
+          <button class="checkboxButton"></button>
+          <p class="todoTextArea">${inputValue}</p>
+        </div>
+        <span class="deleteButton" onclick="removeSelected(${itemId})">X</span>   
+    </div>
   `;
   todos.push({ id: itemId, content: itemBox, checked: false }); // add the todo to the todos array as an object with the todo's id, content and checked status.
   inputRef.value = "";
@@ -44,7 +47,7 @@ document.addEventListener("click", function (event) {
   if (event.target.classList.contains("checkboxButton")) {
     // if the clicked element has the class checkboxButton
     event.target.classList.toggle("checkboxButtonChecked"); // toggle the class checked on the clicked element
-    const parentBox = event.target.closest(".itemBox"); // find the closest parent element with the class itemBox
+    const parentBox = event.target.closest(".todoBox"); // find the closest parent element with the class itemBox
     const todoId = parseInt(parentBox.getAttribute("data-id")); // get the todo's id from the parent element's data-id attribute
     let todo;
     todos.forEach(function (currentTodo) {
@@ -70,6 +73,18 @@ function removeCheckedTodos() {
 }
 window.removeCheckedTodos = removeCheckedTodos;
 
+function removeSelected(id) {
+  for (let index = todos.length - 1; index >= 0; index--) {
+    // loop through the todos array backwards to avoid skipping elements
+    if (todos[index].id === id) {
+      todos.splice(index, 1);
+    }
+  }
+  renderTodos();
+}
+
+window.removeSelected = removeSelected;
+
 function saveTodos() {
   localStorage.setItem("todos", JSON.stringify(todos));
   localStorage.setItem("idCounter", idCounter);
@@ -86,7 +101,7 @@ loadTodos();
 function ifChecked() {
   todos.forEach(function (todo) {
     if (todo.checked && !todo.content.includes("checkboxButtonChecked")) {
-      todo.content = todo.content.replaceAll("checkboxButton", "checkboxButton checkboxButtonChecked"); // add the class checked to the todo's checkbox
+      todo.content = todo.content.replaceAll("checkboxButton", "checkboxButton checkboxButtonChecked");
       todo.content = todo.content.replaceAll("todoTextArea", "todoTextArea todoTextAreaChecked");
     } else if (!todo.checked && todo.content.includes("checkboxButtonChecked")) {
       todo.content = todo.content.replaceAll("checkboxButton checkboxButtonChecked", "checkboxButton");

@@ -6,6 +6,7 @@
 @mixin todoBoxStyles {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   height: 64px;
   width: 540px;
@@ -93,19 +94,25 @@ body {
   }
 
   .newItem {
-    .itemBox {
+    .todoBox {
       @include todoBoxStyles;
 
-      .checkboxButton {
-        @include checkboxButtonStyles;
-      }
+      .todoHolder {
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
-      .inputFeld {
-        @include todoInputStyles;
-      }
+        .checkboxButton {
+          @include checkboxButtonStyles;
+        }
 
-      .checkboxButtonChecked {
-        @include checkedStyles;
+        .inputFeld {
+          @include todoInputStyles;
+        }
+
+        .checkboxButtonChecked {
+          @include checkedStyles;
+        }
       }
     }
   }
@@ -113,26 +120,42 @@ body {
   .itemList {
     margin-top: 24px;
 
-    .itemBox {
+    .todoBox {
       @include todoBoxStyles;
       border-bottom: 1px solid var(--border-bottom);
-    }
 
-    .checkboxButton {
-      @include checkboxButtonStyles;
-    }
+      .todoHolder {
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
-    .checkboxButtonChecked {
-      @include checkedStyles;
-    }
+        .checkboxButton {
+          @include checkboxButtonStyles;
+        }
 
-    .todoTextArea {
-      color: var(--main-color-font);
-    }
+        .checkboxButtonChecked {
+          @include checkedStyles;
+        }
 
-    .todoTextAreaChecked {
-      text-decoration: line-through;
-      color: var(--secondary-color-font);
+        .todoTextArea {
+          color: var(--main-color-font);
+        }
+
+        .todoTextAreaChecked {
+          text-decoration: line-through;
+          color: var(--secondary-color-font);
+        }
+      }
+
+      .deleteButton {
+        height: 18px;
+        width: 18px;
+        color: var(--secondary-color-font);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 
