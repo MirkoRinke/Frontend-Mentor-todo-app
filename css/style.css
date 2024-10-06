@@ -35,12 +35,12 @@
 /** 1200px oder schmaler */
 /** 900px oder schmaler */
 /** 600px oder schmaler */
-/** 450px oder schmaler */
+/** 375px oder schmaler */
 /** 300px oder schmaler */
 /** 1200px oder schmaler */
 /** 900px oder schmaler */
 /** 600px oder schmaler */
-/** 450px oder schmaler */
+/** 375px oder schmaler */
 /** 300px oder schmaler */
 * {
   margin: 0px;
@@ -85,8 +85,6 @@ body {
 }
 
 .content {
-  background-image: url(../assets/img/bg-desktop-dark.jpg);
-  background-repeat: no-repeat;
   max-width: 1440px;
   margin-inline: auto;
   height: 100vh;
@@ -353,4 +351,24 @@ body {
 }
 .content .menuMobile .filterOptionsMobile .active {
   color: var(--activeColor) !important;
+}
+
+.contentBackgroundDark {
+  background-image: url(../assets/img/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+}
+@media (max-width: 375px) {
+  .contentBackgroundDark {
+    background-image: url(../assets/img/bg-mobile-dark.jpg);
+  }
+}
+
+.contentBackgroundLight {
+  background-image: url(../assets/img/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+}
+@media (max-width: 375px) {
+  .contentBackgroundLight {
+    background-image: url(../assets/img/bg-mobile-light.jpg);
+  }
 }/*# sourceMappingURL=style.css.map */

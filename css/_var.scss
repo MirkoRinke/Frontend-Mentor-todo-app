@@ -31,8 +31,8 @@ $breakpoint-md: 900px !default;
 /** 600px oder schmaler */
 $breakpoint-sm: 600px !default;
 
-/** 450px oder schmaler */
-$breakpoint-xs: 450px !default;
+/** 375px oder schmaler */
+$breakpoint-xs: 375px !default;
 
 /** 300px oder schmaler */
 $breakpoint-xxs: 300px !default;
@@ -46,7 +46,7 @@ $breakpoint-xxs: 300px !default;
 /** 600px oder schmaler */
 // @media (max-width: $breakpoint-sm) {
 // }
-/** 450px oder schmaler */
+/** 375px oder schmaler */
 // @media (max-width: $breakpoint-xs) {
 // }
 /** 300px oder schmaler */

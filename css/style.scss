@@ -7,8 +7,6 @@ body {
 }
 
 .content {
-  background-image: url(../assets/img/bg-desktop-dark.jpg);
-  background-repeat: no-repeat;
   max-width: 1440px;
   margin-inline: auto;
   height: 100vh;
@@ -23,4 +21,22 @@ body {
   @import "../components/todoList/_todoList";
 
   @import "../components/todoList/menu/menu.scss";
+}
+
+.contentBackgroundDark {
+  background-image: url(../assets/img/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+
+  @media (max-width: $breakpoint-xs) {
+    background-image: url(../assets/img/bg-mobile-dark.jpg);
+  }
+}
+
+.contentBackgroundLight {
+  background-image: url(../assets/img/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+
+  @media (max-width: $breakpoint-xs) {
+    background-image: url(../assets/img/bg-mobile-light.jpg);
+  }
 }
