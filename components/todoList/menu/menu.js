@@ -21,6 +21,21 @@ function renderMenuTemplate() {
     `;
 }
 
+export function renderMenuMobile() {
+  const menuMobileRef = document.getElementById("menuMobile");
+  menuMobileRef.innerHTML = renderMenuMobileTemplate();
+}
+
+function renderMenuMobileTemplate() {
+  return /*html*/ `
+      <div class="filterOptionsMobile">
+          <span onclick="showAll()" class="filterAll ${showAllActive ? "active" : ""}">All</span>
+          <span onclick="showActive()" class="filterActive ${showActiveActive ? "active" : ""}">Active</span>
+          <span onclick="showCompleted()" class="filterCompleted ${showCompletedActive ? "active" : ""}">Completed</span>
+      </div>
+      `;
+}
+
 export function renderItemsLeft() {
   const itemsLeftRef = document.getElementById("itemsLeft");
   let itemsLeft = 0;
@@ -40,6 +55,7 @@ function showAll() {
     itemListRef.innerHTML += item.content;
   });
   renderMenu();
+  renderMenuMobile();
 }
 
 window.showAll = showAll;
@@ -56,6 +72,7 @@ function showActive() {
     }
   });
   renderMenu();
+  renderMenuMobile();
 }
 
 window.showActive = showActive;
@@ -72,6 +89,7 @@ function showCompleted() {
     }
   });
   renderMenu();
+  renderMenuMobile();
 }
 
 window.showCompleted = showCompleted;
