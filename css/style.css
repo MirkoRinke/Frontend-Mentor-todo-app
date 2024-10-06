@@ -21,6 +21,15 @@
   --activeColor: #3a7cfd;
 }
 
+.light {
+  --background-color: #fafafa;
+  --main-color-font: #494c6b;
+  --secondary-color-font: #9495a5;
+  --menu-background-color: #ffffff;
+  --border-bottom: #e3e4f1;
+  --activeColor: #3a7cfd;
+}
+
 /* Variables */
 /* @media breakpoints */
 /** 1200px oder schmaler */
@@ -94,7 +103,7 @@ body {
   width: 540px;
 }
 .content .header .title {
-  color: var(--main-color-font);
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 15px;
 }
