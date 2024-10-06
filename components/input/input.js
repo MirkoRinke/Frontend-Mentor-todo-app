@@ -20,7 +20,7 @@ function renderInputTemplate() {
       <div class="todoBox">
         <div class="todoHolder">
           <button class="checkboxButton"></button>
-          <input id="inputFeld" class="inputFeld" type="text" placeholder="Currently typing" />
+          <input id="inputFeld" class="inputFeld" type="text" placeholder="Create a new todo…" />
         </div>
       </div>
     `;
