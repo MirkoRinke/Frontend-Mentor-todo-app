@@ -120,6 +120,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 100%;
 }
 .content .newItem .todoBox .todoHolder .checkboxButton {
   height: 24px;
@@ -143,6 +144,7 @@ body {
   border: none;
   font-size: 18px;
   caret-color: #3a7cfd;
+  width: 100%;
 }
 .content .newItem .todoBox .todoHolder .checkboxButtonChecked {
   background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
