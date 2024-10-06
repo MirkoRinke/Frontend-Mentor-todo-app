@@ -1,5 +1,6 @@
-import { overwriteTodos, overwriteIdCounter, todos, idCounter } from "../../js/globals.js";
+import { overwriteIdCounter, idCounter } from "../input/input.js";
 import { renderTodos, ifChecked } from "../todoList/todoList.js";
+import { overwriteTodos, todos } from "../input/input.js";
 
 export function saveTodos() {
   localStorage.setItem("todos", JSON.stringify(todos));
