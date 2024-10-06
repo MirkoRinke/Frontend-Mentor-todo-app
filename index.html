@@ -9,35 +9,10 @@
   </head>
   <body>
     <div class="content">
-      <header class="header">
-        <h1 class="title">Todo</h1>
-        <span class="themeToggle"><img src="./assets/icons/icon-sun.svg" alt="" /></span>
-      </header>
-      <div class="newItem">
-        <div class="todoBox">
-          <div class="todoHolder">
-            <button class="checkboxButton"></button>
-            <input id="inputFeld" class="inputFeld" type="text" placeholder="Currently typing" />
-          </div>
-        </div>
-      </div>
-      <div id="itemList" class="itemList">
-        <div class="todoBox">
-          <div class="todoHolder">
-            <button class="checkboxButton"></button>
-            <p class="todoTextArea">Lorem ipsum dolor sit amet.</p>
-          </div>
-        </div>
-      </div>
-      <div class="menu">
-        <span class="itemsLeft">5 items left</span>
-        <div class="filterOptions">
-          <span class="filterAll">All</span>
-          <span class="filterActive">Active</span>
-          <span class="filterCompleted">Completed</span>
-        </div>
-        <span onclick="removeCheckedTodos()" class="clearCompleted">Clear Completed</span>
-      </div>
+      <header id="header" class="header"></header>
+      <div id="newItem" class="newItem"></div>
+      <div id="itemList" class="itemList"></div>
+      <div id="menu" class="menu"></div>
     </div>
   </body>
 </html>

@@ -1,0 +1,53 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 540px;
+  padding-inline: 24px;
+  background-color: var(--menu-background-color);
+
+  .itemsLeft {
+    color: var(--secondary-color-font);
+
+    &:hover {
+      cursor: pointer;
+      color: var(--main-color-font);
+    }
+  }
+
+  .filterOptions {
+    .filterAll {
+      color: var(--secondary-color-font);
+
+      &:hover {
+        cursor: pointer;
+        color: var(--main-color-font);
+      }
+    }
+    .filterActive {
+      color: var(--secondary-color-font);
+
+      &:hover {
+        cursor: pointer;
+        color: var(--main-color-font);
+      }
+    }
+    .filterCompleted {
+      color: var(--secondary-color-font);
+
+      &:hover {
+        cursor: pointer;
+        color: var(--main-color-font);
+      }
+    }
+  }
+
+  .clearCompleted {
+    color: var(--secondary-color-font);
+    &:hover {
+      cursor: pointer;
+      color: var(--main-color-font);
+    }
+  }
+}

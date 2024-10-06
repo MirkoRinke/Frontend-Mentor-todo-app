@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 48px;
+  height: 40px;
+  width: 540px;
+
+  .title {
+    color: var(--main-color-font);
+    text-transform: uppercase;
+    letter-spacing: 15px;
+  }
+
+  .themeToggle {
+    height: 26px;
+    width: 26px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
