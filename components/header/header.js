@@ -13,8 +13,10 @@ function renderHeaderTemplate() {
 }
 
 export function toggleTheme() {
-  const body = document.getElementById("body");
-  body.classList.toggle("light");
+  const bodyRef = document.getElementById("body");
+  const contentRef = document.getElementById("content");
+  bodyRef.classList.toggle("light");
+  contentRef.classList.toggle("contentBackgroundLight");
   darkMode = !darkMode;
   renderHeader();
 }
