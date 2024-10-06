@@ -1,0 +1,192 @@
+@import "./fonts";
+@import "./var";
+@import "./default";
+@import "./js_css";
+
+@mixin todoBoxStyles {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 64px;
+  width: 540px;
+  padding-inline: 20px;
+  padding-block: 22px;
+  background-color: var(--menu-background-color);
+}
+
+@mixin todoInputStyles {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  caret-color: #3a7cfd;
+}
+
+@mixin checkboxButtonStyles {
+  height: 24px;
+  width: 24px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background: var(--border-bottom);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(45deg, rgba(85, 221, 255, 1), rgba(192, 88, 243, 1)) border-box;
+  }
+}
+
+@mixin checkedStyles {
+  background: linear-gradient(45deg, rgba(85, 221, 255, 1), rgba(192, 88, 243, 1)) border-box;
+  mask: unset;
+  -webkit-mask: unset;
+  mask-composite: unset;
+  -webkit-mask-composite: unset;
+  mask-composite: unset;
+
+  &::after {
+    content: "✔";
+    color: var(--main-color-font);
+  }
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.content {
+  background-image: url(../assets/img/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  margin-inline: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    margin-bottom: 48px;
+    height: 40px;
+    width: 540px;
+
+    .title {
+      color: var(--main-color-font);
+      text-transform: uppercase;
+      letter-spacing: 15px;
+    }
+
+    .themeToggle {
+      height: 26px;
+      width: 26px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .newItem {
+    .itemBox {
+      @include todoBoxStyles;
+
+      .checkboxButton {
+        @include checkboxButtonStyles;
+      }
+
+      .inputFeld {
+        @include todoInputStyles;
+      }
+
+      .checkboxButtonChecked {
+        @include checkedStyles;
+      }
+    }
+  }
+
+  .itemList {
+    margin-top: 24px;
+
+    .itemBox {
+      @include todoBoxStyles;
+      border-bottom: 1px solid var(--border-bottom);
+    }
+
+    .checkboxButton {
+      @include checkboxButtonStyles;
+    }
+
+    .checkboxButtonChecked {
+      @include checkedStyles;
+    }
+
+    .todoTextArea {
+      color: var(--main-color-font);
+    }
+
+    .todoTextAreaChecked {
+      text-decoration: line-through;
+      color: var(--secondary-color-font);
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 540px;
+    padding-inline: 24px;
+    background-color: var(--menu-background-color);
+
+    .itemsLeft {
+      color: var(--secondary-color-font);
+
+      &:hover {
+        cursor: pointer;
+        color: var(--main-color-font);
+      }
+    }
+
+    .filterOptions {
+      .filterAll {
+        color: var(--secondary-color-font);
+
+        &:hover {
+          cursor: pointer;
+          color: var(--main-color-font);
+        }
+      }
+      .filterActive {
+        color: var(--secondary-color-font);
+
+        &:hover {
+          cursor: pointer;
+          color: var(--main-color-font);
+        }
+      }
+      .filterCompleted {
+        color: var(--secondary-color-font);
+
+        &:hover {
+          cursor: pointer;
+          color: var(--main-color-font);
+        }
+      }
+    }
+
+    .clearCompleted {
+      color: var(--secondary-color-font);
+      &:hover {
+        cursor: pointer;
+        color: var(--main-color-font);
+      }
+    }
+  }
+}

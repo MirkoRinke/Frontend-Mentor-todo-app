@@ -1,0 +1,244 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "JosefinSans";
+  src: url("../assets/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+}
+@font-face {
+  font-family: "JosefinSans Italic";
+  src: url("../assets/fonts/JosefinSans-Italic-VariableFont_wght.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 100 900;
+}
+/* Colors */
+/* Variables */
+:root {
+  --background-color: #171823;
+  --main-color-font: #ffffff;
+  --secondary-color-font: #5b5e7e;
+  --menu-background-color: #25273d;
+  --border-bottom: #393a4b;
+}
+
+/* @media breakpoints */
+/** 1200px oder schmaler */
+/** 900px oder schmaler */
+/** 600px oder schmaler */
+/** 450px oder schmaler */
+/** 300px oder schmaler */
+/** 1200px oder schmaler */
+/** 900px oder schmaler */
+/** 600px oder schmaler */
+/** 450px oder schmaler */
+/** 300px oder schmaler */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "JosefinSans";
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: rgb(255, 255, 255) rgb(0, 0, 0);
+}
+
+.d_none {
+  display: none !important;
+}
+
+.d_block {
+  display: block !important;
+}
+
+.d_flex {
+  display: flex !important;
+}
+
+svg {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.content {
+  background-image: url(../assets/img/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  margin-inline: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 48px;
+  height: 40px;
+  width: 540px;
+}
+.content .header .title {
+  color: var(--main-color-font);
+  text-transform: uppercase;
+  letter-spacing: 15px;
+}
+.content .header .themeToggle {
+  height: 26px;
+  width: 26px;
+}
+.content .header .themeToggle:hover {
+  cursor: pointer;
+}
+.content .newItem .itemBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 64px;
+  width: 540px;
+  padding-inline: 20px;
+  padding-block: 22px;
+  background-color: var(--menu-background-color);
+}
+.content .newItem .itemBox .checkboxButton {
+  height: 24px;
+  width: 24px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background: var(--border-bottom);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.content .newItem .itemBox .checkboxButton:hover {
+  cursor: pointer;
+  background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
+}
+.content .newItem .itemBox .inputFeld {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  caret-color: #3a7cfd;
+}
+.content .newItem .itemBox .checkboxButtonChecked {
+  background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
+  mask: unset;
+  -webkit-mask: unset;
+  mask-composite: unset;
+  -webkit-mask-composite: unset;
+  mask-composite: unset;
+}
+.content .newItem .itemBox .checkboxButtonChecked::after {
+  content: "✔";
+  color: var(--main-color-font);
+}
+.content .itemList {
+  margin-top: 24px;
+}
+.content .itemList .itemBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 64px;
+  width: 540px;
+  padding-inline: 20px;
+  padding-block: 22px;
+  background-color: var(--menu-background-color);
+  border-bottom: 1px solid var(--border-bottom);
+}
+.content .itemList .checkboxButton {
+  height: 24px;
+  width: 24px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background: var(--border-bottom);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.content .itemList .checkboxButton:hover {
+  cursor: pointer;
+  background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
+}
+.content .itemList .checkboxButtonChecked {
+  background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
+  mask: unset;
+  -webkit-mask: unset;
+  mask-composite: unset;
+  -webkit-mask-composite: unset;
+  mask-composite: unset;
+}
+.content .itemList .checkboxButtonChecked::after {
+  content: "✔";
+  color: var(--main-color-font);
+}
+.content .itemList .todoTextArea {
+  color: var(--main-color-font);
+}
+.content .itemList .todoTextAreaChecked {
+  text-decoration: line-through;
+  color: var(--secondary-color-font);
+}
+.content .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 540px;
+  padding-inline: 24px;
+  background-color: var(--menu-background-color);
+}
+.content .menu .itemsLeft {
+  color: var(--secondary-color-font);
+}
+.content .menu .itemsLeft:hover {
+  cursor: pointer;
+  color: var(--main-color-font);
+}
+.content .menu .filterOptions .filterAll {
+  color: var(--secondary-color-font);
+}
+.content .menu .filterOptions .filterAll:hover {
+  cursor: pointer;
+  color: var(--main-color-font);
+}
+.content .menu .filterOptions .filterActive {
+  color: var(--secondary-color-font);
+}
+.content .menu .filterOptions .filterActive:hover {
+  cursor: pointer;
+  color: var(--main-color-font);
+}
+.content .menu .filterOptions .filterCompleted {
+  color: var(--secondary-color-font);
+}
+.content .menu .filterOptions .filterCompleted:hover {
+  cursor: pointer;
+  color: var(--main-color-font);
+}
+.content .menu .clearCompleted {
+  color: var(--secondary-color-font);
+}
+.content .menu .clearCompleted:hover {
+  cursor: pointer;
+  color: var(--main-color-font);
+}/*# sourceMappingURL=style.css.map */
