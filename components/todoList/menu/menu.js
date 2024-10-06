@@ -1,10 +1,11 @@
-import { menuRef, todos } from "../../../js/globals.js";
+import { todos } from "../../input/input.js";
 
 let showAllActive = true;
 let showActiveActive = false;
 let showCompletedActive = false;
 
 export function renderMenu() {
+  const menuRef = document.getElementById("menu");
   menuRef.innerHTML = renderMenuTemplate();
 }
 
