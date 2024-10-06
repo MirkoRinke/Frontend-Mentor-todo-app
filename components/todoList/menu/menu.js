@@ -1,5 +1,9 @@
 import { menuRef, todos } from "../../../js/globals.js";
 
+let showAllActive = true;
+let showActiveActive = false;
+let showCompletedActive = false;
+
 export function renderMenu() {
   menuRef.innerHTML = renderMenuTemplate();
 }
@@ -8,9 +12,9 @@ function renderMenuTemplate() {
   return /*html*/ `
     <span id="itemsLeft" class="itemsLeft">5 items left</span>
     <div class="filterOptions">
-        <span onclick="showAll()" class="filterAll">All</span>
-        <span onclick="showActive()" class="filterActive">Active</span>
-        <span onclick="showCompleted()" class="filterCompleted">Completed</span>
+        <span onclick="showAll()" class="filterAll ${showAllActive ? "active" : ""}">All</span>
+        <span onclick="showActive()" class="filterActive ${showActiveActive ? "active" : ""}">Active</span>
+        <span onclick="showCompleted()" class="filterCompleted ${showCompletedActive ? "active" : ""}">Completed</span>
     </div>
     <span onclick="removeCheckedTodos()" class="clearCompleted">Clear Completed</span>
     `;
@@ -26,16 +30,23 @@ export function renderItemsLeft() {
 }
 
 function showAll() {
+  showAllActive = true;
+  showActiveActive = false;
+  showCompletedActive = false;
   const itemListRef = document.getElementById("itemList");
   itemListRef.innerHTML = "";
   todos.forEach((item) => {
     itemListRef.innerHTML += item.content;
   });
+  renderMenu();
 }
 
 window.showAll = showAll;
 
 function showActive() {
+  showAllActive = false;
+  showActiveActive = true;
+  showCompletedActive = false;
   const itemListRef = document.getElementById("itemList");
   itemListRef.innerHTML = "";
   todos.forEach((item) => {
@@ -43,11 +54,15 @@ function showActive() {
       itemListRef.innerHTML += item.content;
     }
   });
+  renderMenu();
 }
 
 window.showActive = showActive;
 
 function showCompleted() {
+  showAllActive = false;
+  showActiveActive = false;
+  showCompletedActive = true;
   const itemListRef = document.getElementById("itemList");
   itemListRef.innerHTML = "";
   todos.forEach((item) => {
@@ -55,6 +70,7 @@ function showCompleted() {
       itemListRef.innerHTML += item.content;
     }
   });
+  renderMenu();
 }
 
 window.showCompleted = showCompleted;
