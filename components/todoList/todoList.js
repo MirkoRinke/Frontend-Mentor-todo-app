@@ -1,4 +1,4 @@
-import { todos } from "../../js/globals.js";
+import { todos } from "../input/input.js";
 import { saveTodos } from "../storage/storage.js";
 import { renderItemsLeft } from "./menu/menu.js";
 
