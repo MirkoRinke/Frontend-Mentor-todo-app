@@ -102,6 +102,11 @@ body {
   height: 40px;
   width: 540px;
 }
+@media (max-width: 600px) {
+  .content .header {
+    width: 325px;
+  }
+}
 .content .header .title {
   color: #ffffff;
   text-transform: uppercase;
@@ -124,6 +129,11 @@ body {
   padding-inline: 20px;
   padding-block: 22px;
   background-color: var(--menu-background-color);
+}
+@media (max-width: 600px) {
+  .content .newItem .todoBox {
+    width: 327px;
+  }
 }
 .content .newItem .todoBox .todoHolder {
   display: flex;
@@ -181,6 +191,11 @@ body {
   padding-block: 22px;
   background-color: var(--menu-background-color);
   border-bottom: 1px solid var(--border-bottom);
+}
+@media (max-width: 600px) {
+  .content .itemList .todoBox {
+    width: 327px;
+  }
 }
 .content .itemList .todoBox:hover .deleteButton {
   display: block;
@@ -241,7 +256,14 @@ body {
   height: 50px;
   width: 540px;
   padding-inline: 24px;
+  padding-block: 20px;
   background-color: var(--menu-background-color);
+}
+@media (max-width: 600px) {
+  .content .menu {
+    width: 327px;
+    padding: 20px;
+  }
 }
 .content .menu .itemsLeft {
   color: var(--secondary-color-font);
@@ -249,6 +271,11 @@ body {
 .content .menu .itemsLeft:hover {
   cursor: pointer;
   color: var(--main-color-font);
+}
+@media (max-width: 600px) {
+  .content .menu .filterOptions {
+    display: none;
+  }
 }
 .content .menu .filterOptions .filterAll {
   color: var(--secondary-color-font);
@@ -279,5 +306,51 @@ body {
   color: var(--main-color-font);
 }
 .content .menu .active {
+  color: var(--activeColor) !important;
+}
+.content .menuMobile {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 540px;
+  padding-inline: 24px;
+  padding-block: 20px;
+  background-color: var(--menu-background-color);
+  margin-top: 16px;
+}
+@media (max-width: 600px) {
+  .content .menuMobile {
+    display: flex;
+    width: 327px;
+    padding: 20px;
+  }
+}
+.content .menuMobile .filterOptionsMobile {
+  display: flex;
+  gap: 19px;
+}
+.content .menuMobile .filterOptionsMobile .filterAll {
+  color: var(--secondary-color-font);
+}
+.content .menuMobile .filterOptionsMobile .filterAll:hover {
+  cursor: pointer;
+  color: var(--main-color-font);
+}
+.content .menuMobile .filterOptionsMobile .filterActive {
+  color: var(--secondary-color-font);
+}
+.content .menuMobile .filterOptionsMobile .filterActive:hover {
+  cursor: pointer;
+  color: var(--main-color-font);
+}
+.content .menuMobile .filterOptionsMobile .filterCompleted {
+  color: var(--secondary-color-font);
+}
+.content .menuMobile .filterOptionsMobile .filterCompleted:hover {
+  cursor: pointer;
+  color: var(--main-color-font);
+}
+.content .menuMobile .filterOptionsMobile .active {
   color: var(--activeColor) !important;
 }/*# sourceMappingURL=style.css.map */

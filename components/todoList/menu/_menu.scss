@@ -5,7 +5,13 @@
   height: 50px;
   width: 540px;
   padding-inline: 24px;
+  padding-block: 20px;
   background-color: var(--menu-background-color);
+
+  @media (max-width: $breakpoint-sm) {
+    width: 327px;
+    padding: 20px;
+  }
 
   .itemsLeft {
     color: var(--secondary-color-font);
@@ -17,6 +23,10 @@
   }
 
   .filterOptions {
+    @media (max-width: $breakpoint-sm) {
+      display: none;
+    }
+
     .filterAll {
       color: var(--secondary-color-font);
 
@@ -53,5 +63,56 @@
 
   .active {
     color: var(--activeColor) !important;
+  }
+}
+
+.menuMobile {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 540px;
+  padding-inline: 24px;
+  padding-block: 20px;
+  background-color: var(--menu-background-color);
+  margin-top: 16px;
+
+  @media (max-width: $breakpoint-sm) {
+    display: flex;
+    width: 327px;
+    padding: 20px;
+  }
+
+  .filterOptionsMobile {
+    display: flex;
+    gap: 19px;
+
+    .filterAll {
+      color: var(--secondary-color-font);
+
+      &:hover {
+        cursor: pointer;
+        color: var(--main-color-font);
+      }
+    }
+    .filterActive {
+      color: var(--secondary-color-font);
+
+      &:hover {
+        cursor: pointer;
+        color: var(--main-color-font);
+      }
+    }
+    .filterCompleted {
+      color: var(--secondary-color-font);
+
+      &:hover {
+        cursor: pointer;
+        color: var(--main-color-font);
+      }
+    }
+    .active {
+      color: var(--activeColor) !important;
+    }
   }
 }

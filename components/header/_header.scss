@@ -6,6 +6,10 @@
   height: 40px;
   width: 540px;
 
+  @media (max-width: $breakpoint-sm) {
+    width: 325px;
+  }
+
   .title {
     color: #ffffff;
     text-transform: uppercase;

@@ -10,6 +10,10 @@
     padding-block: 22px;
     background-color: var(--menu-background-color);
 
+    @media (max-width: $breakpoint-sm) {
+      width: 327px;
+    }
+
     .todoHolder {
       display: flex;
       align-items: center;
