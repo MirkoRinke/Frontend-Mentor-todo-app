@@ -102,6 +102,8 @@ body {
 }
 @media (max-width: 600px) {
   .content .header {
+    margin-top: 48px;
+    margin-bottom: 40px;
     width: 325px;
   }
 }
@@ -131,6 +133,7 @@ body {
 @media (max-width: 600px) {
   .content .newItem .todoBox {
     width: 327px;
+    height: 48px;
   }
 }
 .content .newItem .todoBox .todoHolder {
@@ -178,6 +181,11 @@ body {
 .content .itemList {
   margin-top: 24px;
 }
+@media (max-width: 600px) {
+  .content .itemList {
+    margin-top: 16px;
+  }
+}
 .content .itemList .todoBox {
   display: flex;
   align-items: center;
@@ -193,6 +201,7 @@ body {
 @media (max-width: 600px) {
   .content .itemList .todoBox {
     width: 327px;
+    height: 48px;
   }
 }
 .content .itemList .todoBox:hover .deleteButton {
@@ -356,19 +365,24 @@ body {
 .contentBackgroundDark {
   background-image: url(../assets/img/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
 }
 @media (max-width: 375px) {
   .contentBackgroundDark {
     background-image: url(../assets/img/bg-mobile-dark.jpg);
+    height: 200px;
   }
 }
 
 .contentBackgroundLight {
   background-image: url(../assets/img/bg-desktop-light.jpg);
   background-repeat: no-repeat;
+  height: 300px;
 }
 @media (max-width: 375px) {
   .contentBackgroundLight {
     background-image: url(../assets/img/bg-mobile-light.jpg);
+    height: 200px;
   }
 }/*# sourceMappingURL=style.css.map */

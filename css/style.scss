@@ -26,17 +26,22 @@ body {
 .contentBackgroundDark {
   background-image: url(../assets/img/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
 
   @media (max-width: $breakpoint-xs) {
     background-image: url(../assets/img/bg-mobile-dark.jpg);
+    height: 200px;
   }
 }
 
 .contentBackgroundLight {
   background-image: url(../assets/img/bg-desktop-light.jpg);
   background-repeat: no-repeat;
+  height: 300px;
 
   @media (max-width: $breakpoint-xs) {
     background-image: url(../assets/img/bg-mobile-light.jpg);
+    height: 200px;
   }
 }
