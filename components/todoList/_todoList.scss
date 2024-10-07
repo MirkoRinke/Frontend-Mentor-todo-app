@@ -1,6 +1,10 @@
 .itemList {
   margin-top: 24px;
 
+  @media (max-width: $breakpoint-sm) {
+    margin-top: 16px;
+  }
+
   .todoBox {
     display: flex;
     align-items: center;
@@ -15,6 +19,7 @@
 
     @media (max-width: $breakpoint-sm) {
       width: 327px;
+      height: 48px;
     }
 
     &:hover .deleteButton {
