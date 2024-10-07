@@ -28,6 +28,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 300px;
+  width: 100%;
 
   @media (max-width: $breakpoint-xs) {
     background-image: url(../assets/img/bg-mobile-dark.jpg);

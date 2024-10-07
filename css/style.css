@@ -367,6 +367,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 300px;
+  width: 100%;
 }
 @media (max-width: 375px) {
   .contentBackgroundDark {
