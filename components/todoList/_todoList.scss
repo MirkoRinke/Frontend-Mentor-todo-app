@@ -26,6 +26,11 @@
       display: block;
     }
 
+    &:hover {
+      background-color: var(--hover-background-color);
+      cursor: pointer;
+    }
+
     .todoHolder {
       display: flex;
       align-items: center;
