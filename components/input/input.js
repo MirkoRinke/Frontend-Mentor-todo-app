@@ -62,7 +62,7 @@ export function getInput() {
   if (inputValue.trim() === "") return;
   let itemId = idCounter++;
   let itemBox = /*html*/ ` 
-      <div class="todoBox" data-id="${itemId}"> 
+      <div id="${itemId}" class="todoBox" data-id="${itemId}"> 
           <div class="todoHolder">
             <button class="checkboxButton"></button>
             <p class="todoTextArea">${inputValue}</p>
