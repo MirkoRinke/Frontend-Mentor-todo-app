@@ -282,7 +282,10 @@ body {
 }
 .content .itemList .todoBox .deleteButton:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .content .menu {
   display: flex;
