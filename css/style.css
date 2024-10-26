@@ -143,7 +143,8 @@ body {
   gap: 10px;
   width: 100%;
 }
-.content .newItem .todoBox .todoHolder .checkboxButton {
+.content .newItem .todoBox .todoHolder .checkboxButton,
+.content .newItem .todoBox .todoHolder .checkboxButtonInput {
   height: 24px;
   width: 24px;
   border: 2px solid transparent;
@@ -155,9 +156,24 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
-.content .newItem .todoBox .todoHolder .checkboxButton:hover {
+.content .newItem .todoBox .todoHolder .checkboxButton:hover,
+.content .newItem .todoBox .todoHolder .checkboxButtonInput:hover {
   cursor: pointer;
   background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
+}
+.content .newItem .todoBox .todoHolder .checkboxButton.checkboxButtonInput:hover,
+.content .newItem .todoBox .todoHolder .checkboxButtonInput.checkboxButtonInput:hover {
+  background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
+  mask: unset;
+  -webkit-mask: unset;
+  mask-composite: unset;
+  -webkit-mask-composite: unset;
+  mask-composite: unset;
+}
+.content .newItem .todoBox .todoHolder .checkboxButton.checkboxButtonInput:hover::after,
+.content .newItem .todoBox .todoHolder .checkboxButtonInput.checkboxButtonInput:hover::after {
+  content: "✉️";
+  color: var(--main-color-font);
 }
 .content .newItem .todoBox .todoHolder .inputFeld {
   background-color: transparent;
