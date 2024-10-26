@@ -232,7 +232,7 @@ body {
   border: 2px solid;
   -o-border-image: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) 1;
      border-image: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) 1;
-  cursor: pointer;
+  cursor: grab;
 }
 .content .itemList .todoBox .todoHolder {
   display: flex;
@@ -282,6 +282,7 @@ body {
 }
 .content .itemList .todoBox .deleteButton:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 .content .menu {
   display: flex;
