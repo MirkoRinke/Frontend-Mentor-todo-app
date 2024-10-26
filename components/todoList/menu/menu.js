@@ -10,7 +10,8 @@ let showCompletedActive = false;
  */
 export function renderMenu() {
   const menuRef = document.getElementById("menu");
-  menuRef.innerHTML = renderMenuTemplate();
+  const itemsLeft = renderItemsLeft();
+  menuRef.innerHTML = renderMenuTemplate(itemsLeft);
 }
 
 /**
@@ -23,9 +24,9 @@ export function renderMenu() {
  *
  * @returns {string} The HTML template for the todo list menu.
  */
-function renderMenuTemplate() {
+function renderMenuTemplate(itemsLeft) {
   return /*html*/ `
-    <span id="itemsLeft" class="itemsLeft">5 items left</span>
+    <span id="itemsLeft" class="itemsLeft">${itemsLeft} items left</span>
     <div class="filterOptions">
         <span onclick="showAll()" class="filterAll ${showAllActive ? "active" : ""}">All</span>
         <span onclick="showActive()" class="filterActive ${showActiveActive ? "active" : ""}">Active</span>
@@ -79,7 +80,8 @@ export function renderItemsLeft() {
   todos.forEach((item) => {
     if (!item.checked) itemsLeft++;
   });
-  itemsLeftRef.innerHTML = `${itemsLeft} items left`;
+  if (itemsLeftRef) itemsLeftRef.innerHTML = `${itemsLeft} items left`;
+  return itemsLeft;
 }
 
 /**
