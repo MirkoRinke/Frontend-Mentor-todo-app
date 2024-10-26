@@ -19,6 +19,7 @@
   --menu-background-color: #25273d;
   --border-bottom: #393a4b;
   --activeColor: #3a7cfd;
+  --hover-background-color: rgb(42, 44, 63);
 }
 
 .light {
@@ -28,6 +29,7 @@
   --menu-background-color: #ffffff;
   --border-bottom: #e3e4f1;
   --activeColor: #3a7cfd;
+  --hover-background-color: rgb(240, 240, 240);
 }
 
 /* Variables */
@@ -165,6 +167,7 @@ body {
   font-size: 18px;
   caret-color: #3a7cfd;
   width: 100%;
+  color: var(--main-color-font);
 }
 .content .newItem .todoBox .todoHolder .checkboxButtonChecked {
   background: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) border-box;
@@ -206,6 +209,10 @@ body {
 }
 .content .itemList .todoBox:hover .deleteButton {
   display: block;
+}
+.content .itemList .todoBox:hover {
+  background-color: var(--hover-background-color);
+  cursor: pointer;
 }
 .content .itemList .todoBox .todoHolder {
   display: flex;
