@@ -1,6 +1,7 @@
 import { todos } from "../input/input.js";
 import { saveTodos } from "../storage/storage.js";
 import { renderItemsLeft } from "./menu/menu.js";
+let draggedElement = null;
 
 /**
  * Renders the list of todos by updating the inner HTML of the item list element.
@@ -104,3 +105,57 @@ export function ifChecked() {
   });
   renderTodos();
 }
+
+//! Drag and Drop functionality
+
+/**
+ * Handles the drag start event for a draggable element.
+ *
+ * @param {DragEvent} event - The drag start event object.
+ */
+export function dragStart(event) {
+  draggedElement = event.target;
+  event.dataTransfer.effectAllowed = "move";
+  draggedElement.classList.add("dragging");
+}
+window.dragStart = dragStart;
+
+/**
+ * Handles the dragover event to allow dropping.
+ *
+ * @param {DragEvent} event - The dragover event object.
+ */
+export function dragOver(event) {
+  event.preventDefault();
+}
+window.dragOver = dragOver;
+
+/**
+ * Handles the drop event for a draggable todo item.
+ *
+ * @param {DragEvent} event - The drop event triggered when a draggable element is dropped.
+ * @returns {void}
+ *
+ * @description
+ * This function prevents the default drop action, removes the "dragging" class from the dragged element,
+ * and reorders the todo items based on the drop target. It updates the `todos` array and re-renders the todo list.
+ *
+ * @example
+ * Assuming `draggedElement` is a global variable representing the currently dragged element,
+ * and `todos` is an array of todo objects with `id` properties.
+ *
+ * document.addEventListener('drop', drop);
+ */
+export function drop(event) {
+  event.preventDefault();
+  draggedElement.classList.remove("dragging");
+  const targetElement = event.target.closest(".todoBox");
+  if (draggedElement !== targetElement) {
+    const draggedIndex = todos.findIndex((todo) => todo.id == draggedElement.dataset.id);
+    const targetIndex = todos.findIndex((todo) => todo.id == targetElement.dataset.id);
+    const [movedTodo] = todos.splice(draggedIndex, 1);
+    todos.splice(targetIndex, 0, movedTodo);
+    renderTodos();
+  }
+}
+window.drop = drop;
