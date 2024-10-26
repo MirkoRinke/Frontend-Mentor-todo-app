@@ -41,7 +41,7 @@ function renderInputTemplate() {
   return /*html*/ `
       <div class="todoBox">
         <div class="todoHolder">
-          <button onclick="getInput()" class="checkboxButtonInput"></button>
+          <button onclick="getInput()" class="checkboxButtonInput" aria-label="Input"></button>
           <input id="inputFeld" class="inputFeld" type="text" placeholder="Create a new todo…" />
         </div>
       </div>
