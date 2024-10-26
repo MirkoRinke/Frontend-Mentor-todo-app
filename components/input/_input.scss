@@ -21,7 +21,8 @@
       gap: 10px;
       width: 100%;
 
-      .checkboxButton {
+      .checkboxButton,
+      .checkboxButtonInput {
         height: 24px;
         width: 24px;
         border: 2px solid transparent;
@@ -36,6 +37,20 @@
         &:hover {
           cursor: pointer;
           background: linear-gradient(45deg, rgba(85, 221, 255, 1), rgba(192, 88, 243, 1)) border-box;
+        }
+
+        &.checkboxButtonInput:hover {
+          background: linear-gradient(45deg, rgba(85, 221, 255, 1), rgba(192, 88, 243, 1)) border-box;
+          mask: unset;
+          -webkit-mask: unset;
+          mask-composite: unset;
+          -webkit-mask-composite: unset;
+          mask-composite: unset;
+
+          &::after {
+            content: "✉️";
+            color: var(--main-color-font);
+          }
         }
       }
 
