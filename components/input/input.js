@@ -62,14 +62,15 @@ export function getInput() {
   if (inputValue.trim() === "") return;
   let itemId = idCounter++;
   let itemBox = /*html*/ ` 
-      <div id="${itemId}" class="todoBox" data-id="${itemId}"> 
-          <div class="todoHolder">
-            <button class="checkboxButton"></button>
-            <p class="todoTextArea">${inputValue}</p>
-          </div>
-          <span class="deleteButton" onclick="removeSelected(${itemId})">X</span>   
+  <div draggable="true" id="${itemId}" class="todoBox" data-id="${itemId}" 
+       ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)"> 
+      <div class="todoHolder">
+        <button class="checkboxButton"></button>
+        <p class="todoTextArea">${inputValue}</p>
       </div>
-    `;
+      <span class="deleteButton" onclick="removeSelected(${itemId})">X</span>   
+  </div>`;
+
   todos.push({ id: itemId, content: itemBox, checked: false });
   inputRef.value = "";
   renderTodos();
