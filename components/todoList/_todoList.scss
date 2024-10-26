@@ -91,7 +91,10 @@
 
       &:hover {
         cursor: pointer;
-        transform: scale(1.2);
+        background: linear-gradient(45deg, rgba(85, 221, 255, 1), rgba(192, 88, 243, 1));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
     }
   }
