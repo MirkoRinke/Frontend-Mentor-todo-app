@@ -1,11 +1,11 @@
 import { renderTodos } from "../todoList/todoList.js";
 
-export let todos = []; // todos is an array of objects, each object represents a todo
+export let todos = [];
 export function overwriteTodos(overwrite) {
   todos = overwrite;
 }
 
-export let idCounter = 0; // idCounter is used to give each todo a unique id
+export let idCounter = 0;
 export function overwriteIdCounter(overwrite) {
   idCounter = overwrite;
 }
@@ -30,8 +30,7 @@ export function getInput() {
   const inputRef = document.getElementById("inputFeld");
   let inputValue = inputRef.value;
   if (inputValue.trim() === "") return;
-  let itemId = idCounter++; // give the todo a unique id
-  // data-id is used to identify the todo
+  let itemId = idCounter++;
   let itemBox = /*html*/ ` 
       <div class="todoBox" data-id="${itemId}"> 
           <div class="todoHolder">
@@ -41,7 +40,7 @@ export function getInput() {
           <span class="deleteButton" onclick="removeSelected(${itemId})">X</span>   
       </div>
     `;
-  todos.push({ id: itemId, content: itemBox, checked: false }); // add the todo to the todos array as an object with the todo's id, content and checked status.
+  todos.push({ id: itemId, content: itemBox, checked: false });
   inputRef.value = "";
   renderTodos();
 }
