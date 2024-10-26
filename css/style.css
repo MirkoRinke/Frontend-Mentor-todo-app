@@ -19,7 +19,6 @@
   --menu-background-color: #25273d;
   --border-bottom: #393a4b;
   --activeColor: #3a7cfd;
-  --hover-background-color: rgb(42, 44, 63);
 }
 
 .light {
@@ -29,7 +28,6 @@
   --menu-background-color: #ffffff;
   --border-bottom: #e3e4f1;
   --activeColor: #3a7cfd;
-  --hover-background-color: rgb(240, 240, 240);
 }
 
 /* Variables */
@@ -202,6 +200,9 @@ body {
   background-color: var(--menu-background-color);
   border-bottom: 1px solid var(--border-bottom);
 }
+.content .itemList .todoBox.dragging {
+  transform: scale(1.05);
+}
 @media (max-width: 600px) {
   .content .itemList .todoBox {
     width: 327px;
@@ -212,7 +213,9 @@ body {
   display: block;
 }
 .content .itemList .todoBox:hover {
-  background-color: var(--hover-background-color);
+  border: 2px solid;
+  -o-border-image: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) 1;
+     border-image: linear-gradient(45deg, rgb(85, 221, 255), rgb(192, 88, 243)) 1;
   cursor: pointer;
 }
 .content .itemList .todoBox .todoHolder {
