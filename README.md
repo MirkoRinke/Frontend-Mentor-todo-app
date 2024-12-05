@@ -12,8 +12,6 @@ The main goal of this project was to implement the functionalities of a Todo app
 ## 🔗 Links
 
 - [Solution URL](https://www.frontendmentor.io/solutions/todo-app-XxBaTQ-I4x)
-- [Live Site URL](https://rococo-sfogliatella-19f6ac.netlify.app)
-
 
 ## 🛠️ Built with
 
